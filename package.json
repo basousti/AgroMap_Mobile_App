@@ -1,22 +1,30 @@
 {
-  "name": "oumaima",
+  "name": "a9wa_yapp",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "taieb": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
   "dependencies": {
+    "react-native-screens": "~4.11.1",
+    "react-native-safe-area-context": "5.4.1",
+    "@expo/vector-icons": "^14.1.0",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-navigation/native": "^7.1.11",
+    "@react-navigation/native-stack": "^7.3.15",
     "expo": "~53.0.11",
     "expo-status-bar": "~2.2.3",
-    "react": "19.0.0",
-    "react-native": "0.79.3"
+    "react": "19.1.0",
+    "react-native": "0.80.0",
+    "react-native-toast-message": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@types/react": "~19.0.10",
+    "@babel/core": "^7.27.4",
+    "@types/react": "~19.1.8",
+    "@types/react-native": "~0.73.0",
     "typescript": "~5.8.3"
   },
   "private": true
