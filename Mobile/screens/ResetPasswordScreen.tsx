@@ -20,6 +20,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../App";
 import Toast from "react-native-toast-message";
 import { Ionicons } from "@expo/vector-icons";
+import { ENDPOINTS } from "../constants/api";
 
 type ResetPasswordScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -76,7 +77,7 @@ const ResetPasswordScreen: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/Verif/UpdatePw", {
+      const response = await fetch(ENDPOINTS.RESET_PASSWORD, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ newPassword }),

@@ -19,6 +19,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../App";
 import Toast from "react-native-toast-message";
+import { ENDPOINTS } from "../constants/api";
 
 type ForgetPasswordScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -49,7 +50,7 @@ const ForgetPasswordScreen: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/Verif/password", {
+      const response = await fetch(ENDPOINTS.VERIFY_PASSWORD, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

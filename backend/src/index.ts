@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = Number(process.env.PORT);
 const signupRoute= require("./routes/signupR");
 const loginRoute = require("./routes/loginR");
 const userRoute = require("./routes/UserR");
@@ -41,8 +41,8 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
 
 

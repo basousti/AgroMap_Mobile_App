@@ -17,6 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../App";
 import Toast from "react-native-toast-message";
+import { ENDPOINTS } from "../constants/api";
 
 type EnterCodeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -43,7 +44,7 @@ const EnterCodeScreen: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/Verif/Code", {
+      const response = await fetch(ENDPOINTS.VERIFY_CODE, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ verificationCode }),

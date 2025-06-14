@@ -20,6 +20,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../App";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Toast from "react-native-toast-message";
+import { ENDPOINTS } from "../constants/api";
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -61,14 +62,15 @@ const LoginScreen: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/auth/login", {
+      console.log("login form data ", formData);
+      const response = await fetch(ENDPOINTS.LOGIN, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+      console.log("login response ", response.status);
       const result = await response.json();
       console.log("login response token ", result);
 
